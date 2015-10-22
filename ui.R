@@ -7,22 +7,23 @@ shinyUI(fluidPage(
       fileInput('structure_file',"Upload a Structure Q-Matrix File")
     ),
     wellPanel(
-      numericInput("k","Number of clusters",2)
+      numericInput("k","Number of clusters in your file",2)
     ),
   
     wellPanel(
       uiOutput("numClusters")
     ),
     wellPanel(
-      uiOutput("getPopLabels")
-      #submitButton("submit")
+      checkboxInput("sort_indiv",label="Sort the Q-Matrix by Population?")
     ),
     wellPanel(
-      checkboxInput("sort_indiv",label="Sort the Q-Matrix by Population?")
+      uiOutput("getPopLabels")
+      #submitButton("submit")
     )
+
     
     
   ),
-  mainPanel(plotOutput('map'))
+  mainPanel(wellPanel(tags$a(href="https://github.com/mossmatters/structureplot_shiny/tree/master/data", "Click here for example data sets.")),plotOutput('map'))
   )
 )) 

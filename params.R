@@ -1,0 +1,1 @@
+color_choices = list("gray80","gray50","red","blue","green","pink")
